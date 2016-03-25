@@ -1,4 +1,4 @@
-<h1>Task management</h1> 
+<h1>Task Management</h1> 
 
 <h4>Features</h4>
 <ul>

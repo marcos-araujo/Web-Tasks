@@ -2,7 +2,7 @@
 
 <h4>Features</h4>
 <ul>
-	<h1>Task management</h1> 
+	<li>Task management</li> 
 	<li>Open and close the tasks</li>
 	<li>Authentication</li>
 </ul>

@@ -4,10 +4,10 @@
 	http://maven.apache.org/maven-v4_0_0.xsd">
 	  <modelVersion>4.0.0</modelVersion>
 	  <groupId>com.task</groupId>
-	  <artifactId>Tasks</artifactId>
+	  <artifactId>task</artifactId>
 	  <packaging>war</packaging>
 	  <version>1.0-SNAPSHOT</version>
-	  <name>Tasks management</name>
+	  <name>Tasks Management</name>
 	  <build>
 		<plugins>
 			<plugin>
@@ -27,6 +27,14 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 		        </configuration>
       		</plugin>
+      		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>task</wtpContextName>
+				</configuration>
+			</plugin>
 		</plugins>
 	  </build>
 	  <dependencies>

@@ -17,11 +17,14 @@ public class UserDAO{
 	}
 	
 	public boolean isValid(User user){
-		String sql = "SELECT USER, PASSWORD FROM USER WHERE USER=? and PASSWORD=?";
-		try(PreparedStatement stmt = this.connection.prepareStatement(sql);){
+		String sql = "SELECT USER, PASSWORD FROM USER WHERE USER=? AND PASSWORD=?";
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try{
+			stmt = this.connection.prepareStatement(sql);
 			stmt.setString(1, user.getUser());
 			stmt.setString(2, user.getPassword());
-			ResultSet rs = stmt.executeQuery();
+			rs = stmt.executeQuery();
 			stmt.execute();
 			if(rs.next())
 				return true;
@@ -29,6 +32,14 @@ public class UserDAO{
 				return false;
 		}catch(SQLException e){
 			throw new RuntimeException(e);
+		}finally{
+			try{
+				stmt.close();
+				rs.close();
+				connection.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 	}
 }

@@ -1,3 +1,15 @@
+@CHARSET "ISO-8859-1";
+
+#header{
+	background-color: #aaf;
+	font-weight: bold;
+	height: 150px;
+	font-size: 100px;
+	font-family: Arial;
+	text-align: center;
+	line-height: 150px;
+}
+
 body {
   font-family: "arial", sans-serif;
 }
@@ -15,7 +27,6 @@ input, textarea {
 
 input[type=submit] {
 	background: #eef;
-	box-shadow: 0 1px 5px #333;
 	border: 0;
 	padding: 7px;
 	border: solid #aaf;
@@ -44,9 +55,28 @@ body>a {
 	text-decoration: none;
 }
 
+p>a {
+	background-color: #eef;
+	margin-top: 3px;
+	display: inline-block;
+	padding: 3px;
+	border: solid #aaf;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
 body>a:hover {
 	background-color: #559;
 	color: white;
+}
+
+p>a:hover {
+	background-color: #559;
+	color: white;
+}
+
+p{
+	margin: 0;
 }
 
 body table tr:hover {

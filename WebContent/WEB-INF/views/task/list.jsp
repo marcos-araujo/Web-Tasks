@@ -6,10 +6,12 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<script src="resources/js/jquery.js"></script>
-		<link href="resources/css/task.css" rel="stylesheet" /> 
+		<link href="resources/css/task.css" rel="stylesheet" />
+		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
 		<title>Tasks</title>
 	</head>
 	<body>
+		<c:import url="../header.jsp" />
 		<script type="text/javascript">
 			function closeTask(id){
 				$.post("closeTask", {'id' : id}, function(response){$("#task_"+id).html(response);});
@@ -19,32 +21,35 @@
 				$.post("deleteTask", {'id' : id}, function(){$("#task_"+id).closest("tr").hide();});
 			}
 		</script>
-		<a href="logout">Sign out</a>
-		<a href="newTask">New task</a>
 		<br /><br />
+		<p style="float:right;"><a href="logout">Sign out</a></p>
 		<table>
 			<tr>
 				<th>Id</th>
 				<th>Description</th>
 				<th>Closed?</th>
 				<th>Date of finalization</th>
+				<th>X</th>
 			</tr>
 			<c:forEach items="${tasks}" var="task">
 				<tr id="task_${task.id}">
 					<td>${task.id}</td>
 					<td><a href="showTask?id=${task.id}">${task.description}</a></td>
 					<c:if test="${task.closed eq false}">
-					<td>
-						<a href="javascript:void(0)" onclick="closeTask(${task.id});">Close</a>
-					</td>
-					</c:if>
-					<c:if test="${task.closed eq true}">
-						<td>Closed</td>
-					</c:if>
+						<td>
+							<a href="javascript:void(0)" onclick="closeTask(${task.id});">Close</a>
+						</td>
+						</c:if>
+						<c:if test="${task.closed eq true}">
+							<td>Closed</td>
+						</c:if>
 					<td><fmt:formatDate	value="${task.finalizationDate.time}" pattern="dd/MM/yyyy"/></td>
 					<td><a href="javascript:void(0)" onclick="deleteTask(${task.id});">X</a></td>
 				</tr>
 			</c:forEach>
 		</table>
+		<br /><br />
+		<a href="newTask">New task</a>
+		<c:import url="../footer.jsp" />
 	</body>
 </html>

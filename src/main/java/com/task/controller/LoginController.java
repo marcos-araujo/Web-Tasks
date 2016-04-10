@@ -20,7 +20,7 @@ public class LoginController{
 	public String doLogin(User user, HttpSession session){
 		if(new UserDAO().isValid(user)){
 			session.setAttribute("userOnline", user);
-			return "menu";
+			return "redirect:listTasks";
 		}
 		return "redirect:loginForm";
 	}

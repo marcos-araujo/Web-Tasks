@@ -32,17 +32,29 @@ public class JDBCTaskDAO{
 	
 	public void add(Task task){
 		String sql = "INSERT INTO TASK (DESCRIPTION) VALUES (?)";
-		try(PreparedStatement stmt = this.connection.prepareStatement(sql)){
+		PreparedStatement stmt = null;
+		try{
+			stmt = this.connection.prepareStatement(sql);
 			stmt.setString(1, task.getDescription());
 			stmt.execute();
 		}catch(SQLException e){
 			throw new RuntimeException (e);
+		}finally{
+			try{
+				stmt.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	public List<Task> list(){
 		String sql = "SELECT ID, FINALIZATION_DATE, DESCRIPTION, CLOSED FROM TASK";
-		try(PreparedStatement stmt = this.connection.prepareStatement(sql);	ResultSet rs = stmt.executeQuery()){
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try{
+			stmt = this.connection.prepareStatement(sql);	
+			rs = stmt.executeQuery();
 			List<Task> tasks = new ArrayList<Task>();
 			while(rs.next()){
 				Task task = new Task();
@@ -59,23 +71,40 @@ public class JDBCTaskDAO{
 			return tasks;
 		}catch(SQLException e){
 			throw new RuntimeException(e);
+		}finally{
+			try{
+				stmt.close();
+				rs.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	public void delete(Task task){
 		String sql = "DELETE FROM TASK WHERE ID = ?";
-		try(PreparedStatement stmt = this.connection.prepareStatement(sql)){
+		PreparedStatement stmt = null;
+		try{
+			stmt = this.connection.prepareStatement(sql);
 			stmt.setLong(1, task.getId());
 			stmt.execute();
 		}catch(SQLException e){
 			throw new RuntimeException(e);
+		}finally{
+			try{
+				stmt.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}	
 		}
 	}
 	
 	public Task get(Long id){
 		String sql = "SELECT ID, FINALIZATION_DATE, DESCRIPTION, CLOSED FROM TASK WHERE ID = ?";
 		ResultSet rs = null;
-		try(PreparedStatement stmt = this.connection.prepareStatement(sql);){
+		PreparedStatement stmt = null;
+		try{
+			stmt = this.connection.prepareStatement(sql);
 			stmt.setLong(1, id);
 			rs = stmt.executeQuery();
 			if(rs.next()){
@@ -96,6 +125,7 @@ public class JDBCTaskDAO{
 		}finally{
 			try{
 				rs.close();
+				stmt.close();
 			}catch(SQLException e){
 				e.printStackTrace();
 			}
@@ -104,7 +134,9 @@ public class JDBCTaskDAO{
 	
 	public void update(Task task){
 		String sql = "UPDATE TASK SET DESCRIPTION=?, CLOSED=?, FINALIZATION_DATE=? WHERE ID=?";
-		try(PreparedStatement stmt = this.connection.prepareStatement(sql)){
+		PreparedStatement stmt = null;
+		try{
+			stmt = this.connection.prepareStatement(sql);
 			stmt.setString(1, task.getDescription());
 			stmt.setBoolean(2, task.isClosed());
 			if(task.getFinalizationDate() != null)
@@ -115,19 +147,33 @@ public class JDBCTaskDAO{
 			stmt.execute();
 		}catch(SQLException e){
 			throw new RuntimeException(e);
+		}finally{
+			try{
+				stmt.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	public void close(Long id){
 		String sql = "UPDATE TASK SET CLOSED=?, FINALIZATION_DATE=? WHERE ID=?";
 		Task task = this.get(id);
-		try(PreparedStatement stmt = this.connection.prepareStatement(sql);){
+		PreparedStatement stmt = null;
+		try{
+			stmt = this.connection.prepareStatement(sql);
 			stmt.setBoolean(1, true);
 			stmt.setDate(2, new Date(Calendar.getInstance().getTimeInMillis()));
 			stmt.setLong(3, task.getId());
 			stmt.execute();
 		}catch(SQLException e){
 			throw new RuntimeException(e);
+		}finally{
+			try{
+				stmt.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 	}
 	

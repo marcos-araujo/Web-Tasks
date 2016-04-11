@@ -14,10 +14,6 @@ body {
   font-family: "arial", sans-serif;
 }
 
-h1,h2,h3 {
-	text-shadow: 2px 1px 5px grey;
-}
-
 input, textarea {
 	background-color: #eef;
 	border-radius: 10px;
@@ -112,7 +108,6 @@ table tr:nth-child(2n) {
 
 select {
 	background: #eef;
-	box-shadow: 0 1px 5px #333;
 	border: 0;
 	border: solid #aaf;
 	border-radius: 4px;
@@ -121,7 +116,6 @@ select {
 
 option {
 	background: #aae;
-	box-shadow: 0 1px 5px #333;
 	border: 0;
 	border: solid #aaf;
 	border-radius: 4px;

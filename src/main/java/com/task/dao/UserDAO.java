@@ -1,45 +1,27 @@
 package com.task.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.List;
 
-import com.task.jdbc.ConnectionFactory;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
 import com.task.model.User;
 
+@Repository
 public class UserDAO{
 	
-	private Connection connection;
-	
-	public UserDAO(){
-		connection = new ConnectionFactory().getConnection();
-	}
+	@PersistenceContext 
+	private EntityManager manager;
 	
 	public boolean isValid(User user){
-		String sql = "SELECT USER, PASSWORD FROM USER WHERE USER=? AND PASSWORD=?";
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		try{
-			stmt = this.connection.prepareStatement(sql);
-			stmt.setString(1, user.getUser());
-			stmt.setString(2, user.getPassword());
-			rs = stmt.executeQuery();
-			stmt.execute();
-			if(rs.next())
-				return true;
-			else
-				return false;
-		}catch(SQLException e){
-			throw new RuntimeException(e);
-		}finally{
-			try{
-				stmt.close();
-				rs.close();
-				connection.close();
-			}catch(SQLException e){
-				e.printStackTrace();
-			}
-		}
+		String queryH = "from User u where u.user = :user and u.password = :password";
+		List result = manager.createQuery(queryH).setParameter("user", user.getUser()).setParameter("password", user.getPassword()).getResultList();
+		
+		if(result.size()>0)
+			return true;
+
+		return false;
 	}
 }

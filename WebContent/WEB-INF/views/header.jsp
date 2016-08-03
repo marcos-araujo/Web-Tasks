@@ -1,5 +1,5 @@
 <%-- <img src="<c:url value="/images/header.png"/>" /> --%>
 <div id="header">
-	<p style="float:right; margin:0; font-size: 20px;">Welcome, ${userOnline.user}</p>
-	Task Management
+	<p id="user">Welcome, ${userOnline.user}</p>
+	Tasks
 </div>

@@ -8,7 +8,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<link href="resources/css/jquery-ui.css" rel="stylesheet">
-		<link href="resources/css/task.css" rel="stylesheet" /> 
+		<link href="resources/css/list.css" rel="stylesheet" /> 
 		<script src="resources/js/jquery.js"></script>
 		<script src="resources/js/jquery-ui.js"></script>
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">

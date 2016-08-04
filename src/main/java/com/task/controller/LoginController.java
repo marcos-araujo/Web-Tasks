@@ -1,15 +1,21 @@
 package com.task.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.task.dao.UserDAO;
 import com.task.model.User;
 
+@Transactional
 @Controller
 public class LoginController{
+	
+	@Autowired
+	private UserDAO userDAO;
 	
 	@RequestMapping("loginForm")
 	public String loginForm(){
@@ -18,7 +24,7 @@ public class LoginController{
 	
 	@RequestMapping("doLogin")
 	public String doLogin(User user, HttpSession session){
-		if(new UserDAO().isValid(user)){
+		if(userDAO.isValid(user)){
 			session.setAttribute("userOnline", user);
 			return "redirect:listTasks";
 		}

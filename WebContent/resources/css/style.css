@@ -1,18 +1,23 @@
 @CHARSET "ISO-8859-1";
 
+html{
+	font-family: Arial;
+}
+
 #header{
 	background-color: #aaf;
 	font-weight: bold;
-	height: 150px;
-	font-size: 100px;
-	font-family: Arial;
+	height: 130px;
+	font-size: 80px;
 	text-align: center;
-	line-height: 150px;
+	line-height: 130px;
 }
 
-body {
-  font-family: "arial", sans-serif;
-}
+#user{
+	margin: 0 5px 0 0;
+	float:right; 
+	font-size: 20px;
+} 
 
 input, textarea {
 	background-color: #eef;
@@ -69,10 +74,6 @@ body>a:hover {
 p>a:hover {
 	background-color: #559;
 	color: white;
-}
-
-p{
-	margin: 0;
 }
 
 body table tr:hover {

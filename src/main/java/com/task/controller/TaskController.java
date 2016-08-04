@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.task.dao.JPATaskDAO;
+import com.task.dao.TaskDAO;
 import com.task.model.Task;
 
 @Transactional
@@ -19,7 +19,7 @@ import com.task.model.Task;
 public class TaskController{
 	
 	@Autowired
-	private JPATaskDAO taskDAO;
+	private TaskDAO taskDAO;
 	
 	@RequestMapping("newTask")
 	public String form(){

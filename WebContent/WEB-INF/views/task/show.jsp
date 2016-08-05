@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@taglib tagdir="/WEB-INF/tags" prefix="caelum" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="mytags" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -15,7 +15,7 @@
 		<title>Update Task</title>
 	</head>
 	<body>
-		<c:import url="../header.jsp" />
+		<c:import url="../general/header.jsp" />
 		<h3>Update task - ${task.id}</h3>
 		<form:errors path="tarefa.descricao"/>
 		<form action="updateTask" method="post">
@@ -26,10 +26,10 @@
 			Closed? <input type="checkbox" name="closed" value="true" ${task.closed? 'checked' : ''}/> 
 			<br />
 			Date of finalization: <br />
-			<caelum:fieldDate id="finalizationDate" value="${date}" />
+			<mytags:fieldDate id="finalizationDate" value="${task.finalizationDate.time}" />
 			<br />
 			<input type="submit" value="Update"/>
 		</form>
-		<c:import url="../footer.jsp" />
+		<c:import url="../general/footer.jsp" />
 	</body>
 </html>

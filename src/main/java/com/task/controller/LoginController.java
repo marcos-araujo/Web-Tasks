@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.task.dao.TaskDAO;
 import com.task.dao.UserDAO;
 import com.task.model.User;
 
@@ -20,7 +19,7 @@ public class LoginController{
 	
 	@RequestMapping("loginForm")
 	public String loginForm(){
-		return "form-login";
+		return "general/form-login";
 	}
 	
 	@RequestMapping("doLogin")
@@ -29,6 +28,7 @@ public class LoginController{
 			session.setAttribute("userOnline", user);
 			return "redirect:listTasks";
 		}
+		session.setAttribute("message", "User not found");
 		return "redirect:loginForm";
 	}
 	

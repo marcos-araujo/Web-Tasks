@@ -10,7 +10,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
 	</head>
 	<body>
-		<c:import url="../header.jsp" />
+		<c:import url="../general/header.jsp" />
 		<h3>Add task</h3>
 		<form:errors path="task.description"/>
 		<form action="addTask" method="post">
@@ -19,6 +19,6 @@
 			<input type="submit" value="Add">
 		</form>
 		<a href="listTasks">Cancel</a>
-		<c:import url="../footer.jsp" />
+		<c:import url="../general/footer.jsp" />
 	</body>
 </html>

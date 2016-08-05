@@ -11,7 +11,7 @@
 		<title>Tasks</title>
 	</head>
 	<body>
-		<c:import url="../header.jsp" />
+		<c:import url="../general/header.jsp" />
 		<script type="text/javascript">
 			function closeTask(id){
 				$.post("closeTask", {'id' : id}, function(response){$("#task_"+id).html(response);});
@@ -50,6 +50,6 @@
 		</table>
 		<br /><br />
 		<a href="newTask">New task</a>
-		<c:import url="../footer.jsp" />
+		<c:import url="../general/footer.jsp" />
 	</body>
 </html>

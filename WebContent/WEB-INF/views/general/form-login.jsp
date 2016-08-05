@@ -11,6 +11,8 @@
 	</head>
 	<body>
 		<h2>Task Management</h2>
+		<span><b>${message}</b></span>
+		<br /><br />
 		<form action="doLogin" method="post">
 			User: <input type="text" name="user" /> <br />
 			Password: <input type="password" name="password" /> <br />

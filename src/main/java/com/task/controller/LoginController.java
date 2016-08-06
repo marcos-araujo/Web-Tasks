@@ -19,7 +19,7 @@ public class LoginController{
 	
 	@RequestMapping("loginForm")
 	public String loginForm(){
-		return "general/form-login";
+		return "general/login";
 	}
 	
 	@RequestMapping("doLogin")

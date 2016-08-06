@@ -10,13 +10,22 @@
 	<title>Login</title>
 	</head>
 	<body>
-		<h2>Task Management</h2>
-		<span><b>${message}</b></span>
-		<br /><br />
-		<form action="doLogin" method="post">
-			User: <input type="text" name="user" /> <br />
-			Password: <input type="password" name="password" /> <br />
-			<input type="submit" value="Login" />
-		</form>
+		<div id="login">
+			<h2 class="tittle">Tasks</h2>
+			<span><b>${message}</b></span>
+			<form action="doLogin" method="post">
+				<table border="0" width="100%">
+					<tr>
+						<td>User:</td>
+						<td><input type="text" name="user" /></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type="password" name="password" /></td>
+					</tr>
+				</table>
+				<input id="loginButton" type="submit" value="Login" />
+			</form>
+		</div>
 	</body>
 </html>

@@ -14,6 +14,19 @@ body {
   font-family: "arial", sans-serif;
 }
 
+#login{
+	width: 300px;
+	margin: 0 auto;
+}
+
+.tittle{
+	text-align: center;
+}
+
+#loginButton{
+	float:right;
+}
+
 input, textarea {
 	background-color: #eef;
 	border-radius: 10px;
@@ -75,34 +88,34 @@ p{
 	margin: 0;
 }
 
-body table tr:hover {
+body #table tr:hover {
 	background-color: #cfc;
 }
 
-table {
+#table {
 	border-collapse: collapse;
 	text-align: left;
 }
 
-table td {
+#table td {
 	padding: 3px 20px;
 }
 
-table th {
+#table th {
 	padding: 3px 20px;
 	background-color: #aaf;
 }
 
-table a {
+#table a {
 	letter-spacing: 2px;
 	font-size: 14px;
 }
 
-table a:hover {
+#table a:hover {
 	color: red;
 }
 
-table tr:nth-child(2n) {
+#table tr:nth-child(2n) {
 	background-color: #eef;
 }
 

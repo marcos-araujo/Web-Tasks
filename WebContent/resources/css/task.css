@@ -1,0 +1,187 @@
+@CHARSET "ISO-8859-1";
+
+a:link, a:visited, a:hover, a:active {
+    color: black;
+}
+
+#header{
+	background-color: #aaf;
+	font-weight: bold;
+	height: 130px;
+	font-size: 80px;
+	font-family: Arial;
+	text-align: center;
+	line-height: 130px;
+}
+
+#user{
+	float: left;
+	top: 0;
+	left: 0;
+	margin:0; 
+	font-size: 20px;
+	height: 50px;
+	margin-left: 10px;
+}
+
+form>a {
+	background-color: #eef;
+	margin-top: 3px;
+	display: inline-block;
+	padding: 7px;
+	border: solid #aaf;
+	border-radius: 10px;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+form>a:hover {
+	background-color: #559;
+	color: white;
+	cursor:pointer
+}
+
+#signout{
+	float: right;
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+body {
+  font-family: "arial", sans-serif;
+}
+
+#login{
+	width: 300px;
+	margin: 0 auto;
+	border: 0px solid red;
+}
+
+.tittle{
+	text-align: center;
+}
+
+#loginBotton{
+	float:right;
+}
+
+#loginMessage{
+	float:right;
+	margin-right: 10px;
+}
+
+input, textarea {
+	background-color: #eef;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 2px 5px;
+}
+
+input[type=submit] {
+	background: #eef;
+	border: 0;
+	padding: 7px;
+	border: solid #aaf;
+	border-radius: 10px;
+	cursor:pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #559;
+	color: white;
+}
+
+span[id*=errors] {
+	color: red;
+	border: 3px solid #ff0000;
+	margin: 3px 0px;
+	display: inline-block;
+}
+
+body>a {
+	background-color: #eef;
+	margin-top: 3px;
+	display: inline-block;
+	padding: 3px;
+	border: solid #aaf;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+p>a {
+	background-color: #eef;
+	margin-top: 3px;
+	display: inline-block;
+	padding: 3px;
+	border: solid #aaf;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+body>a:hover {
+	background-color: #559;
+	color: white;
+}
+
+p>a:hover {
+	background-color: #559;
+	color: white;
+}
+
+p{
+	margin: 0;
+}
+
+body #table tr:hover {
+	background-color: #cfc;
+}
+
+#table {
+	border-collapse: collapse;
+	text-align: left;
+	width: 100%;
+}
+
+#table td {
+	padding: 3px 20px;
+}
+
+#table th {
+	padding: 3px 20px;
+	background-color: #aaf;
+}
+
+#table a {
+	letter-spacing: 2px;
+	font-size: 14px;
+}
+
+#table a:hover {
+	color: red;
+}
+
+#table tr:nth-child(2n) {
+	background-color: #eef;
+}
+
+select {
+	background: #eef;
+	border: 0;
+	border: solid #aaf;
+	border-radius: 4px;
+	margin-bottom: 5px;
+}
+
+option {
+	background: #aae;
+	border: 0;
+	border: solid #aaf;
+	border-radius: 4px;
+}
+
+#footer{
+    position: absolute;
+    bottom: 10px;
+    width: 97%;
+}

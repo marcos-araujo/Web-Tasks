@@ -1,5 +1,6 @@
 package com.task.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,7 +8,9 @@ import javax.persistence.Id;
 public class User{
 	
 	@Id
+	@Column(name = "USER")
 	private String user;
+	@Column(name = "PASSWORD")
 	private String password;
 	
 	public String getUser(){

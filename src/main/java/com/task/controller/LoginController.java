@@ -19,7 +19,7 @@ public class LoginController{
 	
 	@RequestMapping("loginForm")
 	public String loginForm(){
-		return "form-login";
+		return "general/login";
 	}
 	
 	@RequestMapping("doLogin")
@@ -28,6 +28,7 @@ public class LoginController{
 			session.setAttribute("userOnline", user);
 			return "redirect:listTasks";
 		}
+		session.setAttribute("message", "User not found");
 		return "redirect:loginForm";
 	}
 	

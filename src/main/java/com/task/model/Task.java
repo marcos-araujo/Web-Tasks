@@ -2,6 +2,7 @@ package com.task.model;
 
 import java.util.Calendar;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,10 +18,16 @@ public class Task{
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "ID")
 	private Long id;
+	@Column(name = "NAME")
+	private String name;
 	@NotNull @Size(min=5)
+	@Column(name = "DESCRIPTION")
 	private String description;
+	@Column(name = "CLOSED")
 	private boolean closed;
+	@Column(name = "FINALIZATION_DATE")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar finalizationDate;
@@ -32,6 +39,13 @@ public class Task{
 		this.id = id;
 	}
 	
+	public String getName(){
+		return name;
+	}
+	public void setName(String name){
+		this.name = name;
+	}
+
 	public String getDescription(){
 		return description;
 	}

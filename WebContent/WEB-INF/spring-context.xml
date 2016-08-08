@@ -43,7 +43,6 @@
 		<property name="username" value="root"/> 
 		<property name="password" value="root"/> 
 	</bean>
-
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
 		<property name="dataSource" ref="mysqlDataSource" /> 

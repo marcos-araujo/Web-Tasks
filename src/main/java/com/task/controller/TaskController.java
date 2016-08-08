@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.task.dao.JPATaskDAO;
+import com.task.dao.TaskDAO;
 import com.task.model.Task;
 
 @Transactional
@@ -19,21 +19,24 @@ import com.task.model.Task;
 public class TaskController{
 	
 	@Autowired
-	private JPATaskDAO taskDAO;
+	private TaskDAO taskDAO;
 	
 	@RequestMapping("newTask")
 	public String form(){
-		return "task/form";
-	}
-
-	@RequestMapping("addTask")
-	public String add(@Valid Task task, BindingResult result){
-		if(result.hasFieldErrors("description")) 
-			return "task/form";
-		taskDAO.add(task);
-		return "redirect:listTasks";
+		return "task/show";
 	}
 	
+	@RequestMapping("saveTask")
+	public String save(@Valid Task task, BindingResult result){
+		if(result.hasFieldErrors("description"))
+			return "task/show";
+		if(task.getId() == null)
+			taskDAO.add(task);
+		else
+			taskDAO.update(task);
+		return "redirect:listTasks";
+	}
+
 	@RequestMapping("showTask")
 	public String show(Long id, Model model){
 		Task dao = taskDAO.get(id);
@@ -41,14 +44,6 @@ public class TaskController{
 			model.addAttribute("date", new SimpleDateFormat("dd/MM/yyyy").format(dao.getFinalizationDate().getTime()));
 		model.addAttribute("task", dao);
 		return "task/show";
-	}
-	
-	@RequestMapping("updateTask")
-	public String altera(@Valid Task task, BindingResult result){
-		if(result.hasFieldErrors("description"))
-			return "task/show";
-		taskDAO.update(task);
-		return "redirect:listTasks";
 	}
 	
 	@RequestMapping("listTasks")

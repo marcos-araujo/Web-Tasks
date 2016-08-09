@@ -12,7 +12,7 @@
 		<script src="resources/js/jquery.js"></script>
 		<script src="resources/js/jquery-ui.js"></script>
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
-		<title>Update Task</title>
+		<title>Task</title>
 	</head>
 	<body>
 		<c:import url="../general/header.jsp" />

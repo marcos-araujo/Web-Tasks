@@ -24,10 +24,11 @@
 		<br /><br />
 		<table id="table" border="0">
 			<tr>
-				<th width="38%">Name</th>
+				<th width="36%">Name</th>
 				<th width="48%">Description</th>
 				<th width="5%">Closed?</th>
 				<th width="5%">Finalization</th>
+				<th width="2%">&nbsp;</th>
 				<th width="2%">&nbsp;</th>
 				<th width="2%">&nbsp;</th>
 			</tr>
@@ -38,13 +39,15 @@
 					<td>${task.description}</td>
 
 					<c:if test="${task.closed eq false}">
-						<td><a href="javascript:void(0)" onclick="closeTask(${task.id});">Close</a></td>
+						<td>No</td>
 					</c:if>
 					<c:if test="${task.closed eq true}">
 						<td>Yes</td>
 					</c:if>
 
 					<td><fmt:formatDate	value="${task.finalizationDate.time}" pattern="dd/MM/yyyy"/></td>
+
+					<td><a href="javascript:void(0)" onclick="closeTask(${task.id});"><img src="resources/images/done.png" width="15"/></a></td>
 
 					<td><a href="showTask?id=${task.id}"><img src="resources/images/edit.png" width="15"/></a></td>
 

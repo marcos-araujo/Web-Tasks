@@ -1,28 +1,45 @@
 @CHARSET "ISO-8859-1";
 
-a:link, a:visited, a:hover, a:active {
-    color: black;
-}
+/* ------------ General ------------ */
 
-#header{
-	background-color: #aaf;
-	font-weight: bold;
-	height: 130px;
-	font-size: 80px;
-	font-family: Arial;
-	text-align: center;
-	line-height: 130px;
-}
+body { font-family: "arial", sans-serif; }
 
-#user{
-	float: left;
-	top: 0;
-	left: 0;
-	margin:0; 
-	font-size: 20px;
-	height: 50px;
-	margin-left: 10px;
-}
+body>a { background-color: #eef; margin-top: 3px; display: inline-block; padding: 3px; border: solid #aaf; border-radius: 10px; text-decoration: none; }
+
+a:link, a:visited, a:hover, a:active { color: black; }
+
+select { background: #eef; border: 0; border: solid #aaf; border-radius: 4px; margin-bottom: 5px; }
+
+option { background: #aae; border: 0; border: solid #aaf; border-radius: 4px; }
+
+/* ------------ Header ------------ */
+
+#header { background-color: #aaf; font-weight: bold; height: 130px; font-size: 80px; font-family: Arial; text-align: center; line-height: 130px; }
+
+#user { float: left; top: 0; left: 0; margin:0; font-size: 20px; height: 50px; margin-left: 10px; }
+
+#signout { float: right; font-size: 20px; margin-right: 10px; }
+
+/* ------------ List ------------ */
+
+#table { border-collapse: collapse; text-align: left; width: 100%; }
+
+#table td {	padding: 3px 20px; }
+
+#table th {	padding: 3px 20px; background-color: #aaf; }
+
+#table a { letter-spacing: 2px; font-size: 14px; }
+
+#table a:hover { color: red; }
+
+#table tr:nth-child(2n) { background-color: #eef; }
+
+#table tr:hover { background-color: #cfc; }
+
+/* ------------ Footer ------------ */
+
+#footer{ position: absolute; bottom: 10px; width: 97%; }
+
 
 form>a {
 	background-color: #eef;
@@ -34,6 +51,7 @@ form>a {
 	text-decoration: none;
 	font-family: Arial;
 	font-size: 13px;
+	width: 40px;
 }
 
 form>a:hover {
@@ -42,15 +60,6 @@ form>a:hover {
 	cursor:pointer
 }
 
-#signout{
-	float: right;
-	font-size: 20px;
-	margin-right: 10px;
-}
-
-body {
-  font-family: "arial", sans-serif;
-}
 
 #login{
 	width: 300px;
@@ -84,7 +93,8 @@ input[type=submit] {
 	padding: 7px;
 	border: solid #aaf;
 	border-radius: 10px;
-	cursor:pointer;
+	cursor: pointer;
+	width: 60px;
 }
 
 input[type=submit]:hover {
@@ -97,16 +107,6 @@ span[id*=errors] {
 	border: 3px solid #ff0000;
 	margin: 3px 0px;
 	display: inline-block;
-}
-
-body>a {
-	background-color: #eef;
-	margin-top: 3px;
-	display: inline-block;
-	padding: 3px;
-	border: solid #aaf;
-	border-radius: 10px;
-	text-decoration: none;
 }
 
 p>a {
@@ -131,57 +131,4 @@ p>a:hover {
 
 p{
 	margin: 0;
-}
-
-body #table tr:hover {
-	background-color: #cfc;
-}
-
-#table {
-	border-collapse: collapse;
-	text-align: left;
-	width: 100%;
-}
-
-#table td {
-	padding: 3px 20px;
-}
-
-#table th {
-	padding: 3px 20px;
-	background-color: #aaf;
-}
-
-#table a {
-	letter-spacing: 2px;
-	font-size: 14px;
-}
-
-#table a:hover {
-	color: red;
-}
-
-#table tr:nth-child(2n) {
-	background-color: #eef;
-}
-
-select {
-	background: #eef;
-	border: 0;
-	border: solid #aaf;
-	border-radius: 4px;
-	margin-bottom: 5px;
-}
-
-option {
-	background: #aae;
-	border: 0;
-	border: solid #aaf;
-	border-radius: 4px;
-}
-
-#footer{
-    position: absolute;
-    bottom: 10px;
-    width: 97%;
 }

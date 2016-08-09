@@ -30,6 +30,8 @@ public class TaskController{
 	public String save(@Valid Task task, BindingResult result){
 		if(result.hasFieldErrors("description"))
 			return "task/show";
+		if(task.getFinalizationDate() != null)
+			task.setClosed(true);
 		if(task.getId() == null)
 			taskDAO.add(task);
 		else

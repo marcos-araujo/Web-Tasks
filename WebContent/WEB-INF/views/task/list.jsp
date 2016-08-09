@@ -24,12 +24,12 @@
 		<br /><br />
 		<table id="table" border="0">
 			<tr>
-				<th width="35%">Name</th>
-				<th width="45%">Description</th>
+				<th width="38%">Name</th>
+				<th width="48%">Description</th>
 				<th width="5%">Closed?</th>
 				<th width="5%">Finalization</th>
-				<th width="5%">&nbsp;</th>
-				<th width="5%">&nbsp;</th>
+				<th width="2%">&nbsp;</th>
+				<th width="2%">&nbsp;</th>
 			</tr>
 			<c:forEach items="${tasks}" var="task">
 				<tr id="task_${task.id}">
@@ -46,9 +46,9 @@
 
 					<td><fmt:formatDate	value="${task.finalizationDate.time}" pattern="dd/MM/yyyy"/></td>
 
-					<td><a href="showTask?id=${task.id}">Editar</a></td>
+					<td><a href="showTask?id=${task.id}"><img src="resources/images/edit.png" width="15"/></a></td>
 
-					<td><a href="javascript:void(0)" onclick="deleteTask(${task.id});">Delete</a></td>
+					<td><a href="javascript:void(0)" onclick="deleteTask(${task.id});"><img src="resources/images/remove.png" width="15"/></a></td>
 				</tr>
 			</c:forEach>
 		</table>

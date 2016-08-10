@@ -62,9 +62,14 @@ public class TaskController{
 
 	@RequestMapping("closeTask")
 	public String close(Long id, Model model){
-		taskDAO.close(id);
+		model.addAttribute("task", taskDAO.close(id));
+		return "task/closed";
+	}
+
+	@RequestMapping("reopen")
+	public String reopen(Long id, Model model){
+		taskDAO.reopen(id);
 		model.addAttribute("task", taskDAO.get(id));
 		return "task/closed";
 	}
-	
 }

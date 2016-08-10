@@ -36,10 +36,17 @@ public class TaskDAO{
 		manager.remove(get(task.getId())); 
 	}
 	
-	public void close(Long id){ 
+	public Task close(Long id){ 
 		Task task = get(id); 
 		task.setClosed(true); 
 		task.setFinalizationDate(Calendar.getInstance()); 
+		return task;
+	}
+	
+	public void reopen(Long id){ 
+		Task task = get(id); 
+		task.setClosed(false); 
+		task.setFinalizationDate(null); 
 	}
 
 }

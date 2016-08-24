@@ -1,4 +1,4 @@
-<h1>Task Management</h1> 
+<h1>Task</h1> 
 
 <h4>Features</h4>
 <ul>
@@ -19,11 +19,6 @@
 	<li>Dependency Injection</li>
 	<li>Transaction Management</li>
 	<li>Spring Security</li>
-</ul>
-
-<h4>References</h4>
-<ul> 
-	<li>FJ-21 Caelum - Java para Desenvolvimento Web</li>
 </ul>
 
 URL: <a href="http://localhost/task">http://localhost/task</a>

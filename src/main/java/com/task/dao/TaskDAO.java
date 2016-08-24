@@ -32,8 +32,8 @@ public class TaskDAO{
 		return manager.find(Task.class, id); 
 	}
 	
-	public void delete(Task task){ 
-		manager.remove(get(task.getId())); 
+	public void delete(Long id){ 
+		manager.remove(get(id)); 
 	}
 	
 	public Task close(Long id){ 

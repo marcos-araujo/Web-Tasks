@@ -34,7 +34,7 @@
 			<mytags:fieldDate id="finalizationDate" value="${task.finalizationDate.time}" />
 			<br />
 			<input type="submit" value="Save" />
-			<a href="javascript:void(0)" onclick="deleteTask(${task.id});">Delete</a>
+			<a href="deleteTask?id=${task.id}">Delete</a>
 			<a href="listTasks">Cancel</a>
 		</form>
 		<c:import url="../general/footer.jsp" />

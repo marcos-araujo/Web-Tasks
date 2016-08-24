@@ -30,18 +30,18 @@
 	
 <!--
 	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
-		<property name="url" value="jdbc:mysql://127.10.231.130:3306/jbossews"/>
-		<property name="username" value="adminLcCYP6q"/> 
-		<property name="password" value="wGmbYxkeQfAH"/> 
+		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
+		<property name="url" 				value="jdbc:mysql://127.10.231.130:3306/jbossews"/>
+		<property name="username" 			value="adminLcCYP6q"/> 
+		<property name="password" 			value="wGmbYxkeQfAH"/> 
 	</bean>
 -->
-
+	
 	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
-		<property name="url" value="jdbc:mysql://localhost:3306/projects"/>
-		<property name="username" value="root"/> 
-		<property name="password" value="root"/> 
+		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
+		<property name="url" 				value="jdbc:mysql://localhost:3306/projects"/>
+		<property name="username" 			value="root"/> 
+		<property name="password" 			value="root"/> 
 	</bean>
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 

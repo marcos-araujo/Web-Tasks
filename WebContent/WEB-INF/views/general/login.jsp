@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div id="login">
-			<h2 class="tittle">Tasks</h2>
+			<h2 class="tittle">Task</h2>
 			<form action="doLogin" method="post">
 				<table border="0" width="100%">
 					<tr>

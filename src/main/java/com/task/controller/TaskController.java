@@ -55,8 +55,8 @@ public class TaskController{
 	}
 	
 	@RequestMapping("deleteTask")
-	public String delete(Task task){
-		taskDAO.delete(task);
+	public String delete(Long id){
+		taskDAO.delete(id);
 		return "redirect:listTasks";
 	}
 

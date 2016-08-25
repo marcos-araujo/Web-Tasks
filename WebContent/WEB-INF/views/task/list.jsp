@@ -13,17 +13,11 @@
 	<body>
 		<c:import url="../general/header.jsp" />
 		<script type="text/javascript">
-			function closeTask(id){
-				$.post("closeTask", {'id' : id}, function(response){$("#task_"+id).html(response);});
-			}
+			function closeTask(id){	$.post("closeTask", {'id' : id}, function(response){$("#task_"+id).html(response);}); }
 			
-			function reopenTask(id){
-				$.post("reopenTask", {'id' : id}, function(response){$("#task_"+id).html(response);});
-			}
+			function reopenTask(id){ $.post("reopenTask", {'id' : id}, function(response){$("#task_"+id).html(response);}); }
 			
-			function deleteTask(id){
-				$.post("deleteTask", {'id' : id}, function(){$("#task_"+id).closest("tr").hide();});
-			}
+			function deleteTask(id){ $.post("deleteTask", {'id' : id}, function(){$("#task_"+id).closest("tr").hide();}); }
 		</script>
 		<br /><br />
 		<table id="table" border="0">
@@ -51,16 +45,16 @@
 
 					<td><fmt:formatDate	value="${task.finalizationDate.time}" pattern="dd/MM/yyyy"/></td>
 
-					<td><a href="showTask?id=${task.id}"><img src="resources/images/edit.png" width="15"/></a></td>
+					<td><a href="showTask?id=${task.id}" title="Edit Task"><img src="resources/images/edit.png" width="15"/></a></td>
 
 					<c:if test="${task.closed eq false}">
-						<td><a href="javascript:void(0)" onclick="closeTask(${task.id});"><img src="resources/images/done.png" width="15"/></a></td>
+						<td><a href="javascript:void(0)" title="Close Task" onclick="closeTask(${task.id});"><img src="resources/images/done.png" width="15"/></a></td>
 					</c:if>
 					<c:if test="${task.closed eq true}">
-						<td><a href="javascript:void(0)" onclick="reopenTask(${task.id});"><img src="resources/images/reopen.png" width="15"/></a></td>
+						<td><a href="javascript:void(0)" title="Reopen Task" onclick="reopenTask(${task.id});"><img src="resources/images/reopen.png" width="15"/></a></td>
 					</c:if>
 
-					<td><a href="javascript:void(0)" onclick="deleteTask(${task.id});"><img src="resources/images/remove.png" width="15"/></a></td>
+					<td><a href="javascript:void(0)" title="Delete Task" onclick="deleteTask(${task.id});"><img src="resources/images/remove.png" width="15"/></a></td>
 				</tr>
 			</c:forEach>
 		</table>

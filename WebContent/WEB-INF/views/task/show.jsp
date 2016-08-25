@@ -29,7 +29,7 @@
 			Description<br />
 			<textarea name="description" cols="100" rows="5">${task.description}</textarea>
 			<br />
-			<form:errors path="task.description"/>
+			<form:errors path="task.description"/><br /> 
 			Finalization<br /> 
 			<mytags:fieldDate id="finalizationDate" value="${task.finalizationDate.time}" />
 			<br />

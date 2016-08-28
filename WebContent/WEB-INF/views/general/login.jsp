@@ -15,8 +15,8 @@
 			<form action="doLogin" method="post">
 				<table border="0" width="100%">
 					<tr>
-						<td>User:</td>
-						<td><input type="text" name="user" size="25"/></td>
+						<td>Login:</td>
+						<td><input type="text" name="login" size="25"/></td>
 					</tr>
 					<tr>
 						<td>Password:</td>

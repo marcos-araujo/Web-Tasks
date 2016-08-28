@@ -15,8 +15,8 @@ public class UserDAO{
 	private EntityManager manager;
 	
 	public boolean isValid(User user){
-		Query query = manager.createQuery("from User u where u.user = :user and u.password = :password");
-		query = query.setParameter("user", user.getUser()).setParameter("password", user.getPassword());
+		Query query = manager.createQuery("from User u where u.login = :user and u.password = :password");
+		query = query.setParameter("user", user.getLogin()).setParameter("password", user.getPassword());
 		
 		if(query.getResultList().size() > 0)
 			return true;

@@ -4,7 +4,6 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<script src="resources/js/jquery.js"></script>
 		<link href="resources/css/task.css" rel="stylesheet" />
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
 		<title>About the project</title>

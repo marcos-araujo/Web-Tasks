@@ -2,28 +2,45 @@ package com.task.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class User{
 	
 	@Id
-	@Column(name = "USER")
-	private String user;
+	@GeneratedValue
+	@Column(name = "ID")
+	private long id;
+	@Column(name = "NAME")
+	private String name;
+	@Column(name = "LOGIN")
+	private String login;
 	@Column(name = "PASSWORD")
 	private String password;
 	
-	public String getUser(){
-		return user;
+	public long getId() {
+		return id;
 	}
-	public void setUser(String user){
-		this.user = user;
+	public void setId(long id) {
+		this.id = id;
 	}
-	
-	public String getPassword(){
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password){
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	

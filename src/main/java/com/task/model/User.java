@@ -19,28 +19,31 @@ public class User{
 	@Column(name = "PASSWORD")
 	private String password;
 	
-	public long getId() {
+	public long getId(){
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(long id){
 		this.id = id;
 	}
-	public String getName() {
+	
+	public String getName(){
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(String name){
 		this.name = name;
 	}
-	public String getLogin() {
+	
+	public String getLogin(){
 		return login;
 	}
-	public void setLogin(String login) {
+	public void setLogin(String login){
 		this.login = login;
 	}
-	public String getPassword() {
+	
+	public String getPassword(){
 		return password;
 	}
-	public void setPassword(String password) {
+	public void setPassword(String password){
 		this.password = password;
 	}
 	

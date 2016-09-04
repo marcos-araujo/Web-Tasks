@@ -75,4 +75,4 @@ form>a:hover { background-color: #559;	color: white; cursor:pointer }
 
 #footer{ position: absolute; bottom: 10px; width: 97%; }
 
-a.about:link, a.about:visited, a.about:hover{ text-decoration: underline !important; }
+a.about:link, a.about:visited, a.about:hover{ text-decoration: underline !important; float:right; }

@@ -4,18 +4,23 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "USER")
 public class User{
 	
 	@Id
 	@GeneratedValue
 	@Column(name = "ID")
 	private long id;
+	
 	@Column(name = "NAME")
 	private String name;
+	
 	@Column(name = "LOGIN")
 	private String login;
+	
 	@Column(name = "PASSWORD")
 	private String password;
 	

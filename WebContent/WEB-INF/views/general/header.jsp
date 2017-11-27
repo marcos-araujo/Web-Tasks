@@ -3,8 +3,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<script src="resources/js/jquery.js"></script>
+		<script src="resources/js/jquery-ui.js"></script>
 		<script src="resources/js/webTasks.js"></script>
 		<link href="resources/css/webTasks.css" rel="stylesheet" />
+		<link href="resources/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
 		<title>Web Tasks</title>
 	</head>

@@ -5,25 +5,23 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <c:import url="../general/header.jsp" />
-<script type="text/javascript">
-	function deleteTask(id){
-		$.post("deleteTask", {'id' : id});
-	}
-</script>
+
 <br /><br />
 <form action="saveTask" method="post">
 	<input type="hidden" name="id" value="${task.id}" />
-	Name <br />
-	<input type="text" name="name" value="${task.name}" size="98"/><br />
+	
+	Name <input type="text" name="name" value="${task.name}" size="70"/><br />
 	Description<br />
-	<textarea name="description" cols="100" rows="5">${task.description}</textarea>
-	<br />
+	<textarea name="description" cols="75" rows="5">${task.description}</textarea>
+	
 	<form:errors path="task.description"/><br /> 
-	Finalization<br /> 
-	<mytags:fieldDate id="finalizationDate" value="${task.finalizationDate.time}" />
+	
+	Finalization <mytags:fieldDate id="finalizationDate" value="${task.finalizationDate.time}" />
+	
 	<br />
 	<input type="submit" value="Save" />
 	<a href="deleteTask?id=${task.id}">Delete</a>
 	<a href="listTasks">Cancel</a>
 </form>
+
 <c:import url="../general/footer.jsp" />

@@ -14,11 +14,11 @@
 			<form action="doLogin" method="post">
 				<table border="0" width="100%">
 					<tr>
-						<td>Login:</td>
+						<td>Login</td>
 						<td><input type="text" name="login" size="25"/></td>
 					</tr>
 					<tr>
-						<td>Password:</td>
+						<td>Password</td>
 						<td><input type="password" name="password" size="25"/></td>
 					</tr>
 				</table>

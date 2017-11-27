@@ -6,7 +6,7 @@ body{
 	font-family: "arial", sans-serif;
 }
 
-body>a{ 
+.linkP{ 
 	background-color: #eef;
  	margin-top: 3px;
  	display: inline-block;
@@ -16,7 +16,7 @@ body>a{
   	text-decoration: none;
 }
 
-body>a:hover{ 
+.linkP:hover{ 
 	background-color: #559;
  	color: white;
 }
@@ -89,12 +89,6 @@ span[id*=errors]{
  	display: inline-block;
 }
 
-a.labout:link, a.labout:visited, a.labout:hover{ 
-	text-decoration: none !important; 
-		color: black;
- 	text-decoration: none;
-}
-
 /* ------------ Header ------------ */
 
 #header{ 
@@ -135,11 +129,11 @@ a.labout:link, a.labout:visited, a.labout:hover{
 }
 
 #table td{	
-	padding: 3px 20px; 
+	padding: 3px 5px; 
 }
 
 #table th{	
-	padding: 3px 20px; 
+	padding: 3px 5px; 
 	background-color: #aaf; 
 }
 
@@ -207,5 +201,9 @@ form>a:hover{
 
 a.about:link, a.about:visited, a.about:hover{ 
 	text-decoration: underline !important; 
-	float:right; 
+	color: black; 
+}
+
+.right{ 
+	float:right;  
 }

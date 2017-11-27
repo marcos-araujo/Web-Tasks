@@ -7,13 +7,13 @@
 <br />
 <table id="table">
 	<tr>	
-		<th width="36%">Name</th>
-		<th width="48%">Description</th>
-		<th width="5%">Status</th>
-		<th width="5%">Finalization</th>
-		<th width="2%">&nbsp;</th>
-		<th width="2%">&nbsp;</th>
-		<th width="2%">&nbsp;</th>
+		<th width="27%">Name</th>
+		<th width="50%">Description</th>
+		<th width="6%">Status</th>
+		<th width="8%">Finalization</th>
+		<th width="3%">&nbsp;</th>
+		<th width="3%">&nbsp;</th>
+		<th width="3%">&nbsp;</th>
 	</tr>
 	<c:forEach items="${tasks}" var="task">
 		<tr id="task_${task.id}">
@@ -60,7 +60,8 @@
 		</tr>
 	</c:forEach>
 </table>
+
 <br /><br />
-<a href="newTask">New</a>
+<a class="linkP" href="newTask">New</a>
 
 <c:import url="../general/footer.jsp" />

@@ -25,9 +25,9 @@ Store, edit, delete, open e close tasks.
 	<li>Spring Security</li>
 </ul>
 
-Free Software <a target="_blank" class="labout" href="https://github.com/Marcos-Maraujo/Web-Contacts">Code</a>. Feel free to contribute.
+Free Software <a target="_blank" class="about" href="https://github.com/Marcos-Maraujo/Web-Tasks">Code</a>. Feel free to contribute.
 
 <br /><br />
 
-<a href="listTasks">Back</a>
+<a class="linkP" href="listTasks">Back</a>
 <c:import url="WEB-INF/views/general/footer.jsp" />

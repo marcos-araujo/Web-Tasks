@@ -28,15 +28,27 @@
 		<bean class= "com.task.interceptor.AuthorizerInterceptor" /> 
 	</mvc:interceptors>
 	
+	<bean class="java.net.URI" id="dbUrl">
+   	 	<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
+	</bean>
+	
+	<!--
 	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
 		<property name="url" 				value="jdbc:mysql://localhost:3306/PROJECTS"/>
 		<property name="username" 			value="root"/> 
 		<property name="password" 			value="root"/> 
 	</bean>
+	--> 
 	
+	<bean id="dataSourceX" class="org.apache.commons.dbcp.BasicDataSource">
+	    <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+	    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+	    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+	</bean>
+
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
-		<property name="dataSource" ref="mysqlDataSource" /> 
+		<property name="dataSource" ref="dataSourceX" /> 
 		<property name="jpaVendorAdapter"> 
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
 		</property> 

@@ -28,46 +28,72 @@
 		<bean class= "com.task.interceptor.AuthorizerInterceptor" /> 
 	</mvc:interceptors>
 	
-	<!--
-	<bean class="java.net.URI" id="dbUrl">
-   	 	<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
-   	 	<constructor-arg value="jdbc:postgresql://localhost:5432/postgres"/>
-	</bean>
-	-->
-	
-	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
-		<property name="url" 				value="jdbc:mysql://localhost:3306/PROJECTS"/>
-		<property name="username" 			value="root"/> 
-		<property name="password" 			value="root"/> 
-	</bean>
-	
-	<!--
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-	    <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
-	    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
-	    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
-	</bean>
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" 	value="org.postgresql.Driver"/> 
-	    <property name="url" 				value="jdbc:postgresql://localhost:5432/postgres"/>
-	    <property name="username" 			value="admin"/>
-	    <property name="password"			value="admin"/>
-	</bean>
-	-->
-
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
-		<!-- <property name="dataSource" ref="dataSource" /> -->
-		<property name="dataSource" ref="mysqlDataSource" />
-		<property name="jpaVendorAdapter"> 
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
-		</property> 
-	</bean>
-	
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> 
 		<property name="entityManagerFactory" ref="entityManagerFactory"/> 
 	</bean>
 	
 	<tx:annotation-driven/>
 	
+
+
+	<!-- ###################### Postgree Produção ###################### -->
+
+	<!--
+	<bean class="java.net.URI" id="dbUrl">
+   	 	<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
+	</bean>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	    <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+	    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+	    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+	</bean>
+	
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+		<property name="dataSource" ref="dataSource" /> 
+		<property name="jpaVendorAdapter"> 
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
+		</property> 
+	</bean>
+	-->
+	
+
+
+	<!-- ###################### MySQl Local ###################### -->
+	
+	<!--
+	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
+		<property name="url" 				value="jdbc:mysql://localhost:3306/PROJECTS"/>
+		<property name="username" 			value="root"/> 
+		<property name="password" 			value="root"/> 
+	</bean>
+
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+		<property name="dataSource" ref="mysqlDataSource" />
+		<property name="jpaVendorAdapter"> 
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
+		</property> 
+	</bean>
+	--> 
+	
+	
+
+	
+	<!-- ###################### Postgree Local ###################### -->
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" 	value="org.postgresql.Driver"/> 
+	    <property name="url" 				value="jdbc:postgresql://localhost:5432/postgres"/>
+	    <property name="username" 			value="admin"/>
+	    <property name="password"			value="admin"/>
+	</bean>
+	
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+		<property name="dataSource" ref="dataSource" /> 
+		<property name="jpaVendorAdapter"> 
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
+		</property> 
+	</bean>
+
 </beans>

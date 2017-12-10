@@ -34,11 +34,8 @@
 	
 	<tx:annotation-driven/>
 	
+	<!-- ###################### Postgree Produção ###################### 
 
-
-	<!-- ###################### Postgree Produção ###################### -->
-
-	<!--
 	<bean class="java.net.URI" id="dbUrl">
    	 	<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
 	</bean>
@@ -55,13 +52,11 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
 		</property> 
 	</bean>
+	
 	-->
 	
-
-
-	<!-- ###################### MySQl Local ###################### -->
+	<!-- ###################### MySQl Local ######################
 	
-	<!--
 	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
 		<property name="url" 				value="jdbc:mysql://localhost:3306/PROJECTS"/>
@@ -75,12 +70,10 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
 		</property> 
 	</bean>
+	
 	--> 
-	
-	
 
-	
-	<!-- ###################### Postgree Local ###################### -->
+	<!-- ###################### Postgree Local ###################### 
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" 	value="org.postgresql.Driver"/> 
@@ -95,5 +88,7 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
 		</property> 
 	</bean>
+
+	-->
 
 </beans>

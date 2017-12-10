@@ -24,8 +24,9 @@ public class LoginController{
 	
 	@RequestMapping("doLogin")
 	public String doLogin(User user, HttpSession session){
-		if(userDAO.isValid(user)){
-			session.setAttribute("userOnline", user);
+		User userBD = userDAO.isValid(user);
+		if(userBD != null){
+			session.setAttribute("userOnline", userBD);
 			return "redirect:listTasks";
 		}
 		session.setAttribute("message", "User not found");

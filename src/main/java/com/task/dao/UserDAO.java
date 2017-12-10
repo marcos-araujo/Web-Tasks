@@ -1,6 +1,7 @@
 package com.task.dao;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -14,13 +15,15 @@ public class UserDAO{
 	@PersistenceContext 
 	private EntityManager manager;
 	
-	public boolean isValid(User user){
+	public User isValid(User user){
 		Query query = manager.createQuery("from User u where u.login = :user and u.password = :password");
 		query = query.setParameter("user", user.getLogin()).setParameter("password", user.getPassword());
 		
-		if(query.getResultList().size() > 0)
-			return true;
+		try{
+			return (User) query.getSingleResult();
+		}catch(NoResultException e){
+			return null;
+		}
 		
-		return false;
 	}
 }

@@ -5,6 +5,7 @@
 <c:import url="../general/header.jsp" />
 
 <br />
+
 <table id="table">
 	<tr>	
 		<th width="27%">Name</th>
@@ -62,6 +63,9 @@
 </table>
 
 <br /><br />
-<a class="linkP" href="newTask">New</a>
+
+<div class="container">
+	<a class="linkP" href="newTask">New</a>
+</div>
 
 <c:import url="../general/footer.jsp" />

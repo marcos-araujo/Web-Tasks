@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
 		<title>Login</title>
 	</head>
-	<body>
+	<body class="lightYellow">
 		<div id="login">
 			<h2 class="tittle">Web Tasks</h2>
 			<form action="doLogin" method="post">

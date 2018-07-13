@@ -2,23 +2,33 @@
 
 /* ------------ General ------------ */
 
+html{ 
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body{ 
 	font-family: "arial", sans-serif;
 	margin: 0;
+	padding: 0;
 }
 
 .linkP{ 
 	background-color: #eef;
  	margin-top: 3px;
+ 	margin-left: 5px;
  	display: inline-block;
  	padding: 3px;
  	border: solid #aaf;
  	border-radius: 10px;
   	text-decoration: none;
+  	font-weight: bold;
+  	font-size: 15px;
 }
 
 .container{
-	margin-left: 10px;	
+	margin-left: 5px;	
 }
 
 .linkP:hover{ 
@@ -61,6 +71,7 @@ input[type=submit]{
 	border-radius: 10px;
  	cursor: pointer;
 	width: 60px;
+	font-weight: bold;
 }
 
 input[type=submit]:hover{ 
@@ -94,18 +105,22 @@ span[id*=errors]{
  	display: inline-block;
 }
 
+.lightYellow{
+	background-color: #faf9e7; 
+}
+
 /* ------------ Header ------------ */
 
 #header{ 
 	background-color: #aaf;
  	font-family: Arial;
  	text-align: center;
- 	min-width: 1200px;
  	font-weight: bold; 
 	height: 80px; 
 	font-size: 40px; 
 	text-align: center; 
-	line-height: 80px; 
+	line-height: 80px;
+	margin: 5px;
 }
 
 #user{ 
@@ -129,8 +144,7 @@ span[id*=errors]{
 #table{ 
 	border-collapse: collapse; 
 	text-align: left; 
-	width: 100%; 
-	min-width: 1200px;
+	margin: 5px;
 }
 
 #table td{	
@@ -152,7 +166,7 @@ span[id*=errors]{
 }
 
 #table tr:hover{ 
-	background-color: #cfc; 
+	background-color: #d3d7cf;
 }
 
 /* ------------ Login ------------- */
@@ -165,6 +179,7 @@ span[id*=errors]{
 
 #loginBotton{ 
 	float:right; 
+	margin-right: 5px;
 }
 
 #loginMessage{ 
@@ -188,6 +203,7 @@ form>a{
 	font-family: Arial; 
 	font-size: 13px; 
 	width: 40px; 
+	font-weight: bold;
 }
 
 form>a:hover{ 
@@ -201,7 +217,7 @@ form>a:hover{
 #footer{ 
 	position: absolute; 
 	bottom: 10px; 
-	width: 97%; 
+	right: 10px;
 }
 
 a.about:link, a.about:visited, a.about:hover{ 
@@ -211,4 +227,19 @@ a.about:link, a.about:visited, a.about:hover{
 
 .right{ 
 	float:right;  
+}
+
+/* ------------ About ------------ */
+
+.about{
+	margin: 15px 0 0 5px;
+	font-weight: bold;
+}
+
+#about{
+	font-size: 20px; 	
+}
+
+ul{
+	margin: 0;
 }

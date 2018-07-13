@@ -4,17 +4,15 @@
 	
 <c:import url="../general/header.jsp" />
 
-<br />
-
 <table id="table">
 	<tr>	
-		<th width="27%">Name</th>
-		<th width="50%">Description</th>
-		<th width="6%">Status</th>
-		<th width="8%">Finalization</th>
-		<th width="3%">&nbsp;</th>
-		<th width="3%">&nbsp;</th>
-		<th width="3%">&nbsp;</th>
+		<th width="26%">Name</th>
+		<th width="35%">Description</th>
+		<th width="30%">Status</th>
+		<th width="13%">Finalization</th>
+		<th width="2%">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		<th width="2%">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		<th width="2%">&nbsp;&nbsp;&nbsp;&nbsp;</th>
 	</tr>
 	<c:forEach items="${tasks}" var="task">
 		<tr id="task_${task.id}">
@@ -62,10 +60,8 @@
 	</c:forEach>
 </table>
 
-<br /><br />
+<br />
 
-<div class="container">
-	<a class="linkP" href="newTask">New</a>
-</div>
+<a class="linkP" href="newTask">New</a>
 
 <c:import url="../general/footer.jsp" />

@@ -3,31 +3,43 @@
 
 <c:import url="WEB-INF/views/general/header.jsp" />
 
-<br /> 
-Store, edit, delete, open e close tasks. 
- 
-<br />
+	<div id="about">
 
-<h4>Features</h4>
-<ul>
-	<li>Task Management</li> 
-	<li>Authentication</li>
-</ul>
+		<div class="about">Store, edit, delete, open and close tasks. </div>
+		
+		<div class="about">Features</div>
+		<ul>
+			<li>Task Management</li> 
+			<li>Authentication</li>
+		</ul>
+		
+		<div class="about">Design Patterns</div>
+		<ul>
+			<li>Model View Controller</li>
+			<li>Data Access Object</li>
+			<li>Dependency Injection</li>
+		</ul>		
+		
+		<div class="about">APIs and Frameworks</div>
+		<ul>	
+			<li>Integration spring / hibernate</li>
+			<li>Transaction Management</li>
+			<li>Spring Security</li>
+		</ul>
 
-<h4>Training project</h4>
-
-<ul>
-	<li>Model View Controller</li>
-	<li>Data Access Object</li>
-	<li>Integration spring with hibernate</li>
-	<li>Dependency Injection</li>
-	<li>Transaction Management</li>
-	<li>Spring Security</li>
-</ul>
-
-Free Software <a target="_blank" class="about" href="https://github.com/Marcos-Maraujo/Web-Tasks">Code</a>. Feel free to contribute.
-
-<br /><br />
-
-<a class="linkP" href="listTasks">Back</a>
-<c:import url="WEB-INF/views/general/footer.jsp" />
+		<div class="about">Logic overview</div>
+		<ul>	
+			<li></li>
+		</ul>
+		
+		<div class="about">Free Software<a target="_blank" class="about" href="https://github.com/marcos-morgado/Web-Tasks">Code</a>. Feel free to contribute.</div>
+		
+		<br />
+	
+		<a class="linkP" href="listTasks">Back</a>
+	
+	</div>
+	
+	</body>
+		
+</html>

@@ -6,13 +6,14 @@
 
 <c:import url="../general/header.jsp" />
 
-<br /><br />
-
 <div class="container">
+	<br />
 	<form action="saveTask" method="post">
 		<input type="hidden" name="id" value="${task.id}" />
 		
-		Name <input type="text" name="name" value="${task.name}" size="70"/><br />
+		Name <br />
+		<input type="text" name="name" value="${task.name}" size="73"/><br />
+		
 		Description<br />
 		<textarea name="description" cols="75" rows="5">${task.description}</textarea>
 		

@@ -5,7 +5,7 @@
 
 	<div id="about">
 
-		<div class="about">Store, edit, delete, open and close tasks. </div>
+		<div class="about">Create, edit, delete, open and close tasks. </div>
 		
 		<div class="about">Features</div>
 		<ul>
@@ -29,7 +29,11 @@
 
 		<div class="about">Logic overview</div>
 		<ul>	
-			<li></li>
+			<li>The view layer is in JSP</li>
+			<li>The database connection is in Spring Context</li>
+			<li>The persistence is made by Hibernate API</li>
+			<li>All requests go through a HandlerInterceptorAdapter, where the user sessions is verified</li>
+			<li>The main logic is in a Spring Controller</li>
 		</ul>
 		
 		<div class="about">Free Software<a target="_blank" class="about" href="https://github.com/marcos-morgado/Web-Tasks">Code</a>. Feel free to contribute.</div>

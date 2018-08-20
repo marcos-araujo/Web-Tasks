@@ -12,10 +12,10 @@
 		<input type="hidden" name="id" value="${task.id}" />
 		
 		Name <br />
-		<input type="text" name="name" value="${task.name}" size="73"/><br />
+		<input type="text" name="name" value="${task.name}" size="75"/><br />
 		
 		Description<br />
-		<textarea name="description" cols="75" rows="5">${task.description}</textarea>
+		<textarea name="description" cols="70" rows="5">${task.description}</textarea>
 		
 		<form:errors path="task.description"/><br /> 
 		

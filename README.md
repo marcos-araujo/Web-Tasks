@@ -1,32 +1,24 @@
 # Web Tasks 
+> Create, edit, delete, open and close tasks.
 
-Create, edit, delete, open and close tasks.
-		
-Features
-<ul>
-	<li>Task Management</li> 
-	<li>Authentication</li>
-</ul>
+## General info
+Project created for the purpose of studying the some java technologies.
 
-Design Patterns
-<ul>
-	<li>Model View Controller</li>
-	<li>Data Access Object</li>
-	<li>Dependency Injection</li>
-</ul>		
+##Technologies
 
-APIs and Frameworks
+Project created  with:
 <ul>	
 	<li>Integration spring / hibernate</li>
 	<li>Transaction Management</li>
 	<li>Spring Security</li>
 </ul>
 
-Logic overview
-<ul>	
-	<li>The view layer is in JSP</li>
-	<li>The database connection is in Spring Context</li>
-	<li>The persistence is made by Hibernate API</li>
-	<li>All requests go through a HandlerInterceptorAdapter, where the user sessions is verified</li>
-	<li>The main logic is in a Spring Controller</li>
+## Design Patterns
+<ul> 
+	<li>Model View Controler</li>
+	<li>Data Acess Object </li>
+	<li>Dependency Injection</li>
 </ul>
+
+## Contact
+Created by [@marcos-araujo](http://marcosmorgado.com/) - feel free to contact me!

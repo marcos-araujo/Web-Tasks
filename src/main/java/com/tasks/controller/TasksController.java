@@ -1,4 +1,4 @@
-package com.task.controller;
+package com.tasks.controller;
 
 import java.text.SimpleDateFormat;
 
@@ -11,66 +11,68 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.task.dao.TaskDAO;
-import com.task.model.Task;
+import com.tasks.controller.aux.Constant;
+import com.tasks.dao.TaskDAO;
+import com.tasks.model.Task;
 
 @Transactional
 @Controller
-public class TaskController{
+public class TasksController{
 	
 	@Autowired
 	private TaskDAO taskDAO;
 	
 	@RequestMapping("newTask")
 	public String form(){
-		return "task/show";
+		return Constant.PAGE_TASKS_SHOW;
 	}
 	
 	@RequestMapping("saveTask")
 	public String save(@Valid Task task, BindingResult result){
 		if(result.hasFieldErrors("description"))
 			return "task/show";
-		if(task.getFinalizationDate() != null)
+		if(task.getClosingDate() != null)
 			task.setClosed(true);
 		if(task.getId() == null)
 			taskDAO.add(task);
 		else
 			taskDAO.update(task);
-		return "redirect:listTasks";
+		return "redirect:" + Constant.LIST_TASKS;
 	}
 
 	@RequestMapping("showTask")
 	public String show(Long id, Model model){
 		Task dao = taskDAO.get(id);
-		if(dao.getFinalizationDate() != null)
-			model.addAttribute("date", new SimpleDateFormat("dd/MM/yyyy").format(dao.getFinalizationDate().getTime()));
+		if(dao.getClosingDate() != null)
+			model.addAttribute("date", new SimpleDateFormat("dd/MM/yyyy").format(dao.getClosingDate().getTime()));
 		model.addAttribute("task", dao);
-		return "task/show";
+		return Constant.PAGE_TASKS_SHOW;
 	}
 	
 	@RequestMapping("listTasks")
 	public String lista(Model model){
 		model.addAttribute("tasks", taskDAO.list());
-		return "task/list";
+		return Constant.PAGE_TASKS_LIST;
 	}
 	
 	@RequestMapping("deleteTask")
 	public String delete(Long id){
 		if(id != null)
 			taskDAO.delete(id);
-		return "redirect:listTasks";
+		return Constant.LIST_TASKS;
 	}
 
 	@RequestMapping("closeTask")
 	public String close(Long id, Model model){
 		model.addAttribute("task", taskDAO.close(id));
-		return "task/closed";
+		return Constant.PAGE_TASKS_CLOSED;
 	}
 
 	@RequestMapping("reopenTask")
 	public String reopen(Long id, Model model){
 		taskDAO.reopen(id);
 		model.addAttribute("task", taskDAO.get(id));
-		return "task/closed";
+		return Constant.PAGE_TASKS_CLOSED;
 	}
+	
 }

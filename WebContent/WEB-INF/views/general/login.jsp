@@ -3,15 +3,15 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<link href="resources/css/webTasks.css" rel="stylesheet" /> 
+		<link href="resources/css/tasks.css" rel="stylesheet" /> 
 		<link href="resources/css/jquery-ui.css" rel="stylesheet">
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
 		<title>Login</title>
 	</head>
 	<body class="lightYellow">
 		<div id="login">
-			<h2 class="tittle">Web Tasks</h2>
-			<form action="doLogin" method="post">
+			<h2 class="tittle">SpringMVC Tasks</h2>
+			<form action="login" method="post">
 				<table border="0" width="100%">
 					<tr>
 						<td>Login</td>

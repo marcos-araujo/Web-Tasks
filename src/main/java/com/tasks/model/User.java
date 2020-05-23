@@ -1,4 +1,4 @@
-package com.task.model;
+package com.tasks.model;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USERPROJECTS")
+@Table(name = "USER")
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

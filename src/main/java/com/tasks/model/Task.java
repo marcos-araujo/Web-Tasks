@@ -1,4 +1,4 @@
-package com.task.model;
+package com.tasks.model;
 
 import java.util.Calendar;
 
@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "WEB_TASKS")
+@Table(name = "TASK")
 public class Task{
 	
 	@Id
@@ -29,10 +29,10 @@ public class Task{
 	private String description;
 	@Column(name = "CLOSED")
 	private boolean closed;
-	@Column(name = "FINALIZATION_DATE")
+	@Column(name = "CLOSING_DATE")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Calendar finalizationDate;
+	private Calendar closingDate;
 	
 	public Long getId(){
 		return id;
@@ -62,11 +62,11 @@ public class Task{
 		this.closed = closed;
 	}
 	
-	public Calendar getFinalizationDate(){
-		return finalizationDate;
+	public Calendar getClosingDate(){
+		return closingDate;
 	}
-	public void setFinalizationDate(Calendar finalizationDate){
-		this.finalizationDate = finalizationDate;
+	public void setClosingDate(Calendar closingDate){
+		this.closingDate = closingDate;
 	}
 	
 }

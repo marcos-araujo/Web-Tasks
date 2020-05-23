@@ -1,4 +1,4 @@
-package com.task.dao;
+package com.tasks.dao;
 
 import java.util.Calendar;
 import java.util.List;
@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.task.model.Task;
+import com.tasks.model.Task;
 
 @Repository
 public class TaskDAO{
@@ -39,14 +39,14 @@ public class TaskDAO{
 	public Task close(Long id){ 
 		Task task = get(id); 
 		task.setClosed(true); 
-		task.setFinalizationDate(Calendar.getInstance()); 
+		task.setClosingDate(Calendar.getInstance()); 
 		return task;
 	}
 	
 	public void reopen(Long id){ 
 		Task task = get(id); 
 		task.setClosed(false); 
-		task.setFinalizationDate(null); 
+		task.setClosingDate(null); 
 	}
 
 }

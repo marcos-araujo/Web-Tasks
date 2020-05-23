@@ -14,7 +14,7 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-3.1.xsd">
   
-	<context:component-scan base-package="com.task" />
+	<context:component-scan base-package="com.tasks" />
 	  
 	<mvc:annotation-driven />   
   
@@ -26,7 +26,7 @@
 	<mvc:default-servlet-handler/>
 	
 	<mvc:interceptors>
-		<bean class= "com.task.interceptor.AuthorizerInterceptor" /> 
+		<bean class= "com.tasks.interceptor.AuthorizerInterceptor" /> 
 	</mvc:interceptors>
 	
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> 
@@ -35,8 +35,7 @@
 	
 	<tx:annotation-driven/>
 	
-	<!-- ###################### Postgree Produção ###################### 
-	-->
+	<!-- ###################### Postgree Heroku ###################### 
 	<bean class="java.net.URI" id="dbUrl">
    	 	<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
 	</bean>
@@ -53,11 +52,13 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
 		</property> 
 	</bean>
+	-->
 	
 	<!-- ###################### MySQl Local ######################
+	--> 
 	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
-		<property name="url" 				value="jdbc:mysql://localhost:3306/PROJECTS"/>
+		<property name="url" 				value="jdbc:mysql://localhost:3306/SPRINGMVC_TASKS"/>
 		<property name="username" 			value="root"/> 
 		<property name="password" 			value="root"/> 
 	</bean>
@@ -68,7 +69,6 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
 		</property> 
 	</bean>
-	--> 
 	
 	<!-- ###################### Postgree Local ###################### 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">

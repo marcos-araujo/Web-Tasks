@@ -36,7 +36,7 @@
 			<li>The main logic is in a Spring Controller</li>
 		</ul>
 		
-		<div class="about">Free Software<a target="_blank" class="about" href="https://github.com/marcos-morgado/Web-Tasks">Code</a>. Feel free to contribute.</div>
+		<div class="about">Free Software<a target="_blank" class="about" href="https://github.com/marcos-morgado/SpringMVC-Tasks">Code</a>. Feel free to contribute.</div>
 		
 		<br />
 	

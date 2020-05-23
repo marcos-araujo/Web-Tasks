@@ -4,15 +4,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<script src="resources/js/jquery.js"></script>
 		<script src="resources/js/jquery-ui.js"></script>
-		<script src="resources/js/webTasks.js"></script>
-		<link href="resources/css/webTasks.css" rel="stylesheet" />
+		<script src="resources/js/tasks.js"></script>
+		<link href="resources/css/tasks.css" rel="stylesheet" />
 		<link href="resources/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
-		<title>Web Tasks</title>
+		<title>SpringMVC Tasks</title>
 	</head>
 	<body class="lightYellow">
 		<div id="header">
 			<span id="user">${userOnline.name}</span>
-			Web Tasks
+			SpringMVC Tasks
 			<span id="signout"><a href="logout">Sign out</a></span>
 		</div>

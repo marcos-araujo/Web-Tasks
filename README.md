@@ -1,5 +1,5 @@
-# Web Tasks 
-> Create, edit, delete, open and close tasks.
+# SpringMVC Tasks 
+Create, edit, delete, open and close tasks.
 
 ## General info
 Project created for the purpose of studying the some java technologies.
@@ -19,6 +19,3 @@ Project created  with:
 	<li>Data Acess Object </li>
 	<li>Dependency Injection</li>
 </ul>
-
-## Contact
-Created by [@marcos-araujo](http://marcosmorgado.com/) - feel free to contact me!

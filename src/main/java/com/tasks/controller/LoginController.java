@@ -23,21 +23,21 @@ public class LoginController{
 		return Constant.PAGE_LOGIN;
 	}
 	
-	@RequestMapping("login")
+	@RequestMapping("doLogin")
 	public String login(User user, HttpSession session){
 		User userBD = userDAO.isValid(user);
 		if(userBD != null){
 			session.setAttribute("userOnline", userBD);
-			return "redirect:" + Constant.LIST_TASKS;
+			return Constant.REDIRECT_LIST_TASKS;
 		}
 		session.setAttribute("message", "User not found");
-		return "redirect:" + Constant.LOGIN_FORM;
+		return Constant.REDIRECT_LOGIN_FORM;
 	}
 	
 	@RequestMapping("logout") 
 	public String logout(HttpSession session){ 
 		session.invalidate(); 
-		return "redirect:" + Constant.LOGIN_FORM;
+		return Constant.REDIRECT_LOGIN_FORM;
 	}
 	
 }

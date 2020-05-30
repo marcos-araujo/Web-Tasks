@@ -30,14 +30,14 @@ public class TasksController{
 	@RequestMapping("saveTask")
 	public String save(@Valid Task task, BindingResult result){
 		if(result.hasFieldErrors("description"))
-			return "task/show";
+			return Constant.REDIRECT_LIST_TASKS;
 		if(task.getClosingDate() != null)
 			task.setClosed(true);
 		if(task.getId() == null)
 			taskDAO.add(task);
 		else
 			taskDAO.update(task);
-		return "redirect:" + Constant.LIST_TASKS;
+		return Constant.REDIRECT_LIST_TASKS;
 	}
 
 	@RequestMapping("showTask")
@@ -59,7 +59,7 @@ public class TasksController{
 	public String delete(Long id){
 		if(id != null)
 			taskDAO.delete(id);
-		return Constant.LIST_TASKS;
+		return Constant.REDIRECT_LIST_TASKS;
 	}
 
 	@RequestMapping("closeTask")

@@ -28,7 +28,7 @@
 			</c:if>
 
 			<td>
-				<fmt:formatDate	value="${task.finalizationDate.time}" pattern="dd/MM/yyyy"/>
+				<fmt:formatDate	value="${task.closingDate.time}" pattern="dd/MM/yyyy"/>
 			</td>
 
 			<td>

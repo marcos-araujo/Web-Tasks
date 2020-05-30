@@ -19,7 +19,7 @@
 		
 		<form:errors path="task.description"/><br /> 
 		
-		Finalization <mytags:fieldDate id="finalizationDate" value="${task.finalizationDate.time}" />
+		Finalization <mytags:fieldDate id="closingDate" value="${task.closingDate.time}" />
 		
 		<br />
 		<input type="submit" value="Save" />

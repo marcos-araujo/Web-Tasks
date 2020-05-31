@@ -18,7 +18,7 @@
 </td>
 
 <td>
-	<a href="showTask?id=${task.id}" title="Edit Task">
+	<a href="editTask?id=${task.id}" title="Edit Task">
 		<img src="resources/images/edit.png" width="15"/>
 	</a>
 </td>

@@ -24,7 +24,7 @@ public class TasksController{
 	
 	@RequestMapping("newTask")
 	public String form(){
-		return Constant.PAGE_TASKS_SHOW;
+		return Constant.PAGE_TASKS_EDIT;
 	}
 	
 	@RequestMapping("saveTask")
@@ -40,17 +40,17 @@ public class TasksController{
 		return Constant.REDIRECT_LIST_TASKS;
 	}
 
-	@RequestMapping("showTask")
-	public String show(Long id, Model model){
+	@RequestMapping("editTask")
+	public String edit(Long id, Model model){
 		Task dao = taskDAO.get(id);
 		if(dao.getClosingDate() != null)
 			model.addAttribute("date", new SimpleDateFormat("dd/MM/yyyy").format(dao.getClosingDate().getTime()));
 		model.addAttribute("task", dao);
-		return Constant.PAGE_TASKS_SHOW;
+		return Constant.PAGE_TASKS_EDIT;
 	}
 	
 	@RequestMapping("listTasks")
-	public String lista(Model model){
+	public String list(Model model){
 		model.addAttribute("tasks", taskDAO.list());
 		return Constant.PAGE_TASKS_LIST;
 	}
@@ -73,6 +73,11 @@ public class TasksController{
 		taskDAO.reopen(id);
 		model.addAttribute("task", taskDAO.get(id));
 		return Constant.PAGE_TASKS_CLOSED;
+	}
+	
+	@RequestMapping("about")
+	public String about(){
+		return Constant.PAGE_ABOUT;
 	}
 	
 }

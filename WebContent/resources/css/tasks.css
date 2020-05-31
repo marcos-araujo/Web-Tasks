@@ -233,7 +233,6 @@ a.about:link, a.about:visited, a.about:hover{
 
 .about{
 	margin: 15px 0 0 5px;
-	font-weight: bold;
 }
 
 #about{
@@ -242,4 +241,10 @@ a.about:link, a.about:visited, a.about:hover{
 
 ul{
 	margin: 0;
+}
+
+/* ------------ General ------------ */
+
+.bold {
+	font-weight: bold;
 }

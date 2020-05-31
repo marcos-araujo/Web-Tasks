@@ -12,7 +12,7 @@
 		<input type="hidden" name="id" value="${task.id}" />
 		
 		Name <br />
-		<input type="text" name="name" value="${task.name}" size="75"/><br />
+		<input type="text" name="name" value="${task.name}" size="70"/><br />
 		
 		Description<br />
 		<textarea name="description" cols="70" rows="5">${task.description}</textarea>

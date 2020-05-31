@@ -5,7 +5,7 @@
 
 <fmt:formatDate value="${value}" type="date" pattern="dd/MM/yyyy" var="theFormattedDate" />
 
-<input id="${id}" name="${id}" value="${theFormattedDate}" size="6" />
+<input id="${id}" name="${id}" value="${theFormattedDate}" size="7" />
 <script>
 	$("#${id}").datepicker({dateFormat: 'dd/mm/yy', changeYear:true, yearRange: '-100:+0'});
 </script>

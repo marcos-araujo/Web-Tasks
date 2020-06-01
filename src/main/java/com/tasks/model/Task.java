@@ -24,7 +24,6 @@ public class Task{
 	private Long id;
 	@Column(name = "NAME")
 	private String name;
-	@NotNull @Size(min=5)
 	@Column(name = "DESCRIPTION")
 	private String description;
 	@Column(name = "CLOSED")

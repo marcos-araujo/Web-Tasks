@@ -12,7 +12,7 @@ public class AuthorizerInterceptor extends HandlerInterceptorAdapter{
 		String uri = request.getRequestURI(); 
 		if(uri.endsWith("loginForm") || uri.endsWith("Login") || uri.contains("resources")) 
 			return true; 
-		if(uri.replace("/", "").equals("SpringMVC-Tasks")) {
+		if(uri.replaceAll("/", "").equals(request.getContextPath().replaceAll("/", ""))) {
 			response.sendRedirect("listTasks"); 
 			return false; 
 		}

@@ -1,4 +1,4 @@
-package com.tasks.dao;
+package com.springmvc.tasks.dao;
 
 import java.util.Calendar;
 import java.util.List;
@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.tasks.model.Task;
+import com.springmvc.tasks.model.Task;
 
 @Repository
 public class TaskDAO{

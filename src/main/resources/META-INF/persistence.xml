@@ -5,7 +5,7 @@
 	version="2.0">
     <persistence-unit name="tasks">
     	<provider>org.hibernate.ejb.HibernatePersistence</provider>
-    	<class>com.tasks.model.Task</class>
+    	<class>com.springmvc.tasks.model.Task</class>
         <properties>
 			<!-- 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> 

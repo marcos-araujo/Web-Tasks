@@ -1,4 +1,4 @@
-package com.tasks.dao;
+package com.springmvc.tasks.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -7,7 +7,7 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.tasks.model.User;
+import com.springmvc.tasks.model.User;
 
 @Repository
 public class UserDAO{

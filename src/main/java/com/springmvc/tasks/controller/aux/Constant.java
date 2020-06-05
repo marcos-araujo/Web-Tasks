@@ -1,4 +1,4 @@
-package com.tasks.controller.aux;
+package com.springmvc.tasks.controller.aux;
 
 public class Constant {
 

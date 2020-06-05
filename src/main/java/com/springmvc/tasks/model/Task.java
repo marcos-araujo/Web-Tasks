@@ -1,4 +1,4 @@
-package com.tasks.model;
+package com.springmvc.tasks.model;
 
 import java.util.Calendar;
 

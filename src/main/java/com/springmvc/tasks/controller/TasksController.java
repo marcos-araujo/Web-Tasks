@@ -1,4 +1,4 @@
-package com.tasks.controller;
+package com.springmvc.tasks.controller;
 
 import java.text.SimpleDateFormat;
 
@@ -11,9 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tasks.controller.aux.Constant;
-import com.tasks.dao.TaskDAO;
-import com.tasks.model.Task;
+import com.springmvc.tasks.controller.aux.Constant;
+import com.springmvc.tasks.dao.TaskDAO;
+import com.springmvc.tasks.model.Task;
 
 @Transactional
 @Controller

@@ -1,4 +1,4 @@
-package com.tasks.interceptor;
+package com.springmvc.tasks.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -44,11 +44,11 @@
 	</bean>
 	
 	<bean class="java.lang.String" id="username">		
-		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? @dbUrl.getUserInfo().split(':')[1] : 'root' }"/>
+		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? @dbUrl.getUserInfo().split(':')[0] : 'root' }"/>
 	</bean>
 	
 	<bean class="java.lang.String" id="password">		
-		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? @dbUrl.getUserInfo().split(':')[0] : 'root'}"/>
+		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? @dbUrl.getUserInfo().split(':')[1] : 'root'}"/>
 	</bean>
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">

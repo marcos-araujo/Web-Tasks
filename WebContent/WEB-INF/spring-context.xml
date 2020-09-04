@@ -35,15 +35,27 @@
 	
 	<tx:annotation-driven/>
 	
-	<!-- ###################### Postgree Heroku ###################### 
-	<bean class="java.net.URI" id="dbUrl">
-   	 	<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
+	<bean class="java.net.URI" id="dbUrl">				
+		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? systemEnvironment['DATABASE_URL'] : ''}"/>
+	</bean>
+	
+	<bean class="java.lang.String" id="databaseURL">	
+		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() : 'jdbc:mysql://localhost:3306/SPRINGMVC_TASKS' }"/>
+	</bean>
+	
+	<bean class="java.lang.String" id="username">		
+		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? @dbUrl.getUserInfo().split(':')[1] : 'root' }"/>
+	</bean>
+	
+	<bean class="java.lang.String" id="password">		
+		<constructor-arg value="#{systemEnvironment['DATABASE_URL'] != null ? @dbUrl.getUserInfo().split(':')[0] : 'root'}"/>
 	</bean>
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-	    <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
-	    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
-	    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+		<property name="driverClassName" 	value="#{systemEnvironment['DATABASE_URL'] != null ? 'org.postgresql.Driver' : 'com.mysql.cj.jdbc.Driver'}"/> 
+	    <property name="url" 				value="#{@databaseURL}"/>
+	    <property name="username" 			value="#{@username}"/>
+	    <property name="password" 			value="#{@password}"/>
 	</bean>
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
@@ -52,38 +64,5 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
 		</property> 
 	</bean>
-	-->
 	
-	<!-- ###################### MySQl Local ######################
-	--> 
-	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" 	value="com.mysql.jdbc.Driver"/> 
-		<property name="url" 				value="jdbc:mysql://localhost:3306/SPRINGMVC_TASKS"/>
-		<property name="username" 			value="root"/> 
-		<property name="password" 			value="root"/> 
-	</bean>
-
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
-		<property name="dataSource" ref="mysqlDataSource" />
-		<property name="jpaVendorAdapter"> 
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
-		</property> 
-	</bean>
-	
-	<!-- ###################### Postgree Local ###################### 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" 	value="org.postgresql.Driver"/> 
-	    <property name="url" 				value="jdbc:postgresql://localhost:5432/postgres"/>
-	    <property name="username" 			value="root"/>
-	    <property name="password"			value="root"/>
-	</bean>
-	
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
-		<property name="dataSource" ref="dataSource" /> 
-		<property name="jpaVendorAdapter"> 
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
-		</property> 
-	</bean>
-	-->
-
 </beans>
